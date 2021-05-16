@@ -1,0 +1,6 @@
+<view>
+<!-- hearder -->
+<!-- search -->
+<SearchInput></SearchInput>
+<!-- main -->
+</view>
