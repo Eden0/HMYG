@@ -9,3 +9,14 @@ swiper {
 swiper .imageStyle {
   width: 100%; 
 }
+.nav {
+  display: flex;
+}
+.nav navigator {
+  flex: 1;
+  /* 挤压图片缩小 */
+  padding: 20rpx;
+}
+.nav navigator image {
+  width: 100%;
+}
