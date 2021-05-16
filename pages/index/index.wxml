@@ -1,6 +1,15 @@
-<view>
-<!-- hearder -->
-<!-- search -->
-<SearchInput></SearchInput>
-<!-- main -->
+<view class="index">
+	<!-- hearder -->
+	<!-- search -->
+	<SearchInput></SearchInput>
+	<!-- swiper 因为image自适应,所以swiper高度要适应-->
+	<swiper>
+		<swiper-item wx:for="{{swiperList}}" wx:for-itme="item" wx:for-index="index" wx:key="goods_id">
+			<navigator url="item.navigator_url">
+        <!-- 需要考虑原图和swiper比例失调的问题 图片宽度自适应 -->
+				<image class="imageStyle" src="{{item.image_src}}" mode="widthFix"></image>
+			</navigator>
+		</swiper-item>
+	</swiper>
+	<!-- main -->
 </view>
