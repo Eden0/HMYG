@@ -1,3 +1,11 @@
-view {
+.index {
   color: var(--themeColor)
+}
+swiper {
+  /* swiper 高度默认是写死的,需要重新设置样式 */
+  width: 750rpx;
+  height: 340rpx;
+}
+swiper .imageStyle {
+  width: 100%; 
 }

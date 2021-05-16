@@ -4,16 +4,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    swiperList :[],
+    aa:'ww'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    // 发送异步请求
+    this.getSwiperList()
   },
-
+  // 获取轮播图
+  getSwiperList() {
+    wx.request({
+      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata',
+      success:result => {
+        if(result.data.meta.status === 200) {
+          console.log(result.data.message)
+          this.setData({
+            swiperList: result.data.message
+          })
+        }
+      },
+      fail: err => {
+        console.error(err)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
