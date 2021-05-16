@@ -3,7 +3,7 @@
 	<!-- search -->
 	<SearchInput></SearchInput>
 	<!-- swiper 因为image自适应,所以swiper高度要适应-->
-	<swiper>
+	<swiper autoplay indicator-dots circular>
 		<swiper-item wx:for="{{swiperList}}" wx:for-itme="item" wx:for-index="index" wx:key="goods_id">
 			<navigator url="item.navigator_url">
         <!-- 需要考虑原图和swiper比例失调的问题 图片宽度自适应 -->
@@ -11,5 +11,11 @@
 			</navigator>
 		</swiper-item>
 	</swiper>
+  <!-- nav --> 
+  <view class="nav">
+    <navigator wx:for="{{navList}}" wx:key="name">
+      <image src="{{item.image_src}}" mode="widthFix"></image>
+    </navigator>
+  </view>
 	<!-- main -->
 </view>
