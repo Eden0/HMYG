@@ -1,20 +1,30 @@
 // pages/category/index.js
+import {sendRequest}from '../../request/index.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    categoryList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getCategory()
   },
-
+  async getCategory() {
+    const res = await sendRequest({
+      url: 'https://api-hmugo-web.itheima.net/api/public/v1/categories'
+    })
+    if(res.data.meta.status === 200) {
+      this.setData({
+        categoryList: res.data.message
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -6,16 +6,28 @@
 	<swiper autoplay indicator-dots circular>
 		<swiper-item wx:for="{{swiperList}}" wx:for-itme="item" wx:for-index="index" wx:key="goods_id">
 			<navigator url="item.navigator_url">
-        <!-- 需要考虑原图和swiper比例失调的问题 图片宽度自适应 -->
+				<!-- 需要考虑原图和swiper比例失调的问题 图片宽度自适应 -->
 				<image class="imageStyle" src="{{item.image_src}}" mode="widthFix"></image>
 			</navigator>
 		</swiper-item>
 	</swiper>
-  <!-- nav --> 
-  <view class="nav">
-    <navigator wx:for="{{navList}}" wx:key="name">
-      <image src="{{item.image_src}}" mode="widthFix"></image>
-    </navigator>
-  </view>
+	<!-- nav -->
+	<view class="nav">
+		<navigator wx:for="{{navList}}" wx:key="name">
+			<image src="{{item.image_src}}" mode="widthFix"></image>
+		</navigator>
+	</view>
 	<!-- main -->
+	<view class="floors">
+		<view wx:for="{{floorList}}" wx:for-item="element" wx:key="name">
+			<view class="floors-title">
+				<image src="{{element.floor_title.image_src}}" mode="heightFix"></image>
+			</view>
+			<view class="floor-main">
+				<navigator wx:for="{{element.product_list}}" wx:for-item="row" wx:for-index="index2" wx:key="name">
+					<image src="{{row.image_src}}" mode="{{ index2 === 0 ? 'widthFix' : 'scaleToFill' }}"></image>
+				</navigator>
+			</view>
+		</view>
+	</view>
 </view>
