@@ -20,3 +20,28 @@ swiper .imageStyle {
 .nav navigator image {
   width: 100%;
 }
+
+.floors .floors-title {
+  background-color: #fcfcfc;
+  height: 100rpx;
+}
+.floors .floors-title image {
+  /* image 和父元素同高,设置mode heightFix 即可以高度自适应 */
+  height: 100rpx;
+}
+.floor-main {
+  overflow: hidden;
+  padding: 20rpx;
+}
+.floor-main navigator {
+  float: left;
+  width: 33.33%;
+  border-right: 10rpx solid #fff;
+}
+.floor-main navigator image:nth-last-child(-n+4) {
+  height: 27.72vw;
+}
+.floor-main navigator image {
+  height: 100%;
+  width: 100%;
+}

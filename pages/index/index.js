@@ -8,7 +8,8 @@ Page({
    */
   data: {
     swiperList: [],
-    navList: []
+    navList: [],
+    floorList: []
   },
 
   /**
@@ -18,6 +19,7 @@ Page({
     // 发送异步请求
     this.getSwiperList();
     this.getNavList();
+    this.getfloorData();
   },
   // 获取轮播图
   async getSwiperList() {
@@ -65,6 +67,16 @@ Page({
     if (res.data.meta.status === 200) {
       this.setData({
         navList: res.data.message
+      })
+    }
+  },
+  async getfloorData() {
+    const res = await sendRequest({
+      url :'https://api-hmugo-web.itheima.net/api/public/v1/home/floordata'
+    })
+    if(res.data.meta.status === 200) {
+      this.setData({
+        floorList: res.data.message
       })
     }
   },
